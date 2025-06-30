@@ -1,0 +1,196 @@
+.contactSection {
+  padding: 5rem 0;
+  /* background-color: var(--color-olive); */
+  /* background-color: #9e8628; */
+  background: #756528;
+  background: linear-gradient(180deg, rgba(117, 101, 40, 1) 1%, rgba(158, 134, 40, 1) 10%);
+}
+
+.contactContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contactGrid {
+  display: flex;
+  gap: 5rem;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contactInfo {
+  color: white;
+}
+
+.contactLogo {
+  width: 15rem;
+   /* height: 15rem; */
+  /* background-color: var(--color-gold); */
+  /* background-color: var(--color-dark-olive); */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-bottom: 2rem; */
+}
+
+.contactLogoIcon {
+  width: 5rem;
+  height: 5rem;
+  color: var(--color-dark-olive);
+  fill: currentColor;
+}
+
+.contactLogoText {
+  color: var(--color-dark-olive);
+  margin-bottom: 2rem;
+}
+
+.contactLogoTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.contactLogoSubtitle {
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+}
+
+.contactTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .contactTitle {
+    font-size: 2.5rem;
+  }
+}
+
+.contactDetails {
+  margin-bottom: 1rem;
+}
+
+.contactDetail {
+  font-size: 1.125rem;
+  color: white;
+  /* margin-bottom: 1rem; */
+}
+
+.socialTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.socialLink:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.socialIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.formRow {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.formInput {
+  background: white;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  color: var(--color-dark-olive);
+  font-size: 1rem;
+}
+
+.formInput::placeholder {
+  color: rgba(87, 82, 54, 0.6);
+}
+
+.formInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.formTextarea {
+  background: white;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 1rem 1.5rem;
+  color: var(--color-dark-olive);
+  font-size: 1rem;
+  resize: none;
+  font-family: inherit;
+}
+
+.formTextarea::placeholder {
+  color: rgba(87, 82, 54, 0.6);
+}
+
+.formTextarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.formButton {
+  width: 100%;
+  background-color: var(--color-gold);
+  color: var(--color-dark-olive);
+  border: none;
+  padding: 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.125rem;
+  transition: background-color 0.3s ease;
+}
+
+.formButton:hover {
+  background-color: var(--color-dark-olive);
+  color: white;
+}
