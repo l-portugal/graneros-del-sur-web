@@ -16,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <meta name="favicon" content="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet" />
