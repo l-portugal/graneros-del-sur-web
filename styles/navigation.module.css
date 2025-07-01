@@ -8,6 +8,13 @@
   height: 10rem;
 }
 
+@media (max-width: 767px) {
+  .nav {
+    height: 7rem;
+    background-color: rgba(31, 35, 21, 0.9);
+  }
+}
+
 .navContainer {
   max-width: 1200px;
   margin: 0 auto;
@@ -15,6 +22,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+@media (max-width: 767px) {
+  .navContainer {
+    padding: 1rem 1rem;
+  }
 }
 
 .logo {
@@ -26,6 +40,12 @@
   align-items: left;
   justify-content: left;
   margin-right: 10rem;
+}
+
+@media (max-width:767px) {
+  .logo {
+    display: none;
+  }
 }
 
 .logoIcon {
@@ -85,4 +105,65 @@
 .whatsappIcon {
   width: 1.25rem;
   height: 1.25rem;
+}
+
+/* Ícono hamburguesa */
+.menuToggle {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--color-gold);
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* Oculta menú hamburguesa en pantallas grandes */
+@media (min-width: 768px) {
+  .menuToggle {
+    display: none;
+  }
+}
+
+/* Menú móvil (oculto por defecto) */
+.navMenuMobile {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(31, 35, 21, 0.9);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  transform: translateY(-200%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Menú abierto */
+.open {
+  transform: translateY(0);
+}
+
+.logoMobile {
+  width: 9rem;
+  height: 6rem;
+  display: none !important;
+  border-radius: 50%;
+  align-items: left;
+  justify-content: left;
+  margin-right: 10rem;
+}
+
+@media (max-width:767px) {
+  .logoMobile {
+    display: flex !important;
+  }
+}
+
+/* Oculta menú mobile en pantallas grandes */
+@media (min-width: 768px) {
+  .navMenuMobile {
+    display: none;
+  }
 }

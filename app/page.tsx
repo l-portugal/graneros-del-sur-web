@@ -9,8 +9,11 @@ import aboutStyles from "../styles/about.module.css"
 import contactStyles from "../styles/contact.module.css"
 import footerStyles from "../styles/footer.module.css"
 
+import { Menu, X } from 'lucide-react';
+
 export default function LandingPage() {
   const [scrollY, setScrollY] = useState(0)
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -35,15 +38,65 @@ export default function LandingPage() {
       {/* Navigation */}
       <nav className={navStyles.nav}>
         <div className={navStyles.navContainer}>
+
           <div className={navStyles.logo}>
             <img src="/logo-solo.png" alt="Logo" />
           </div>
-          
+
+          <div className={navStyles.logoMobile}>
+            <img src="/logo-graneros.png" alt="Logo" />
+          </div>
+
+          {/* Botón hamburguesa visible solo en móvil */}
+          <button
+            className={navStyles.menuToggle}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
+
+          {/* Menú mobile para pantallas pequeñas */}
+          <div
+            className={`${navStyles.navMenuMobile} ${isOpen ? navStyles.open : ''
+              }`}
+          >
+            <button onClick={() => {
+                setIsOpen(false);
+                scrollToSection("inicio");
+              }} 
+              className={navStyles.navButton}>
+                Inicio
+            </button>
+            <button onClick={() => {
+                setIsOpen(false);
+                scrollToSection("productos");
+              }} 
+              className={navStyles.navButton}>
+                Productos
+            </button>
+            <button onClick={() => {
+                setIsOpen(false);
+                scrollToSection("nosotros");
+              }} 
+              className={navStyles.navButton}>
+                Nosotros
+            </button>
+            <button onClick={() => {
+                setIsOpen(false);
+                scrollToSection("contacto");
+              }} 
+              className={navStyles.navButton}>
+                Contacto
+            </button>
+            <button className={navStyles.navButton}>Experiencias</button>
+          </div>
+
+          {/* Menú normal para pantallas grandes */}
           <div className={navStyles.navMenu}>
             <button
-              onClick={() => scrollToSection("inicio")}
-              className={`${navStyles.navButton}`}
-            >
+              onClick={() => scrollToSection("inicio")} 
+              className={navStyles.navButton}
+              >
               Inicio
             </button>
             <button onClick={() => scrollToSection("productos")} className={navStyles.navButton}>
@@ -58,16 +111,6 @@ export default function LandingPage() {
             <button className={navStyles.navButton}>Experiencias</button>
           </div>
 
-          {/* <div>
-            <a
-              href="https://wa.me/1234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={navStyles.whatsappButton}
-            >
-              <MessageCircle className={navStyles.whatsappIcon} />
-            </a>
-          </div> */}
         </div>
       </nav>
 
@@ -112,18 +155,6 @@ export default function LandingPage() {
                   transform: `translateY(${scrollY * -0.1}px)`,
                 }}
               >
-                {/* <div className={heroStyles.heroLogo}>
-                  <svg viewBox="0 0 200 200" className={heroStyles.heroLogoIcon}>
-                    <circle cx="60" cy="50" r="16" />
-                    <path d="M30 90 Q60 70, 90 90 Q120 110, 150 90 Q170 80, 180 100 L180 140 Q170 150, 150 140 Q120 130, 90 140 Q60 150, 30 140 Z" />
-                  </svg>
-                </div>
-
-                <div className={heroStyles.heroLogoText}>
-                  <div className={heroStyles.heroLogoTitle}>GRANEROS</div>
-                  <div className={heroStyles.heroLogoSubtitle}>DEL SUR</div>
-                </div> */}
-
                 <img src="logo-graneros.png" alt="Graneros del Sur" />
               </div>
             </div>
@@ -157,7 +188,7 @@ export default function LandingPage() {
                   <div className={productStyles.mapStatLabel}>Provincias</div>
                 </div>
                 <div className={productStyles.mapStat}
-                  style={{ 
+                  style={{
                     borderRight: "1px solid",
                     borderLeft: "1px solid",
                   }}
@@ -176,25 +207,8 @@ export default function LandingPage() {
               <div className={productStyles.mapCard}>
                 <div className={productStyles.mapCardInner}>
                   <div className={productStyles.mapCanvas}>
-                    {/* <svg viewBox="0 0 400 600" className={productStyles.mapSvg} fill="none">
-                      <rect width="400" height="600" fill="#E8F4FD" />
-                      <path
-                        d="M200 50 C220 55, 250 70, 280 100 L320 140 C340 180, 350 220, 340 260 L330 300 C320 340, 310 380, 290 420 L270 460 C250 490, 230 510, 200 530 C170 510, 150 490, 130 460 L110 420 C90 380, 80 340, 70 300 L60 260 C50 220, 60 180, 80 140 L120 100 C150 70, 180 55, 200 50 Z"
-                        fill="#A8E6A3"
-                        stroke="#4A5568"
-                        strokeWidth="2"
-                      />
-                      <path d="M150 150 L250 150 L250 200 L150 200 Z" fill="#90CDF4" opacity="0.7" />
-                      <path d="M180 220 L280 220 L280 280 L180 280 Z" fill="#FBD38D" opacity="0.7" />
-                      <path d="M160 300 L260 300 L260 360 L160 360 Z" fill="#F687B3" opacity="0.7" />
-                      <circle cx="200" cy="250" r="8" fill="#E53E3E" />
-                      <path
-                        d="M200 235 C205 235, 210 240, 210 245 C210 250, 200 265, 200 265 C200 265, 190 250, 190 245 C190 240, 195 235, 200 235 Z"
-                        fill="#E53E3E"
-                      />
-                    </svg> */}
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11600870.918617535!2d-76.647253748633!3d-37.174401115499556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9426fc3d0e091fbb%3A0xe6f49b54e8428208!2sVilla%20Maz%C3%A1n%2C%20La%20Rioja!5e0!3m2!1ses!2sar!4v1751304322477!5m2!1ses!2sar" width="600" height="450"  loading="lazy" ></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11600870.918617535!2d-76.647253748633!3d-37.174401115499556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9426fc3d0e091fbb%3A0xe6f49b54e8428208!2sVilla%20Maz%C3%A1n%2C%20La%20Rioja!5e0!3m2!1ses!2sar!4v1751304322477!5m2!1ses!2sar" height="450" loading="lazy" style={{ width: "100vw", border: 0 }}></iframe>
 
                   </div>
                 </div>
@@ -205,12 +219,9 @@ export default function LandingPage() {
       </section>
 
       {/* Products Section */}
-      <section id="productos" className={productStyles.productsSection} 
+      <section id="productos" className={productStyles.productsSection}
         style={{
           backgroundImage: "url('/fondo-productos.jpg')",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "contain",
-          backgroundPosition: "center",
         }}
       >
         <div className={productStyles.productsContainer}>

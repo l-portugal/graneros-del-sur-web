@@ -13,19 +13,32 @@
 }
 
 .contactGrid {
-  display: flex;
+  display: grid;
   gap: 5rem;
-  align-items: start;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
   .contactGrid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
   }
 }
 
 .contactInfo {
   color: white;
+  display: grid;
+  /* align-items: center;
+  justify-content: center;
+  text-align: center; */
+}
+
+@media (max-width: 767px) {
+  .contactInfo {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
 }
 
 .contactLogo {

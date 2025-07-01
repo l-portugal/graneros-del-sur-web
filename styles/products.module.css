@@ -1,4 +1,5 @@
 .mapSection {
+  width: 100%;
   padding: 5rem 0;
   /* background-color: var(--color-cream); */
   background-color: #c2bca9;
@@ -8,20 +9,25 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-  position: relative;
-  z-index: 10;
+  /* position: relative; */
+  /* z-index: 10; */
 }
 
 .mapGrid {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
   align-items: center;
 }
 
 @media (min-width: 768px) {
   .mapGrid {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
   }
+}
+
+.mapContent {
+  width: 100%;
 }
 
 .mapContent h2 {
@@ -146,10 +152,21 @@
 }
 
 .mapCardInner {
+  width: 100%;
   background: #bca160;
   border-radius: 1.5rem;
   padding: 0.5rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .mapCardInner {
+    border-radius: 0;
+    width: 100vw;
+    padding: 0;
+    border-bottom: #bca160 solid 0.5rem;
+    border-top: #bca160 solid 0.5rem;
+  }
 }
 
 .mapCanvas {
@@ -164,6 +181,18 @@
   overflow: hidden;
 }
 
+@media (max-width: 767px) {
+  .mapCardInner {
+    border-radius: 0;
+    /* background: ; */
+  }
+  
+  .mapCanvas {
+    border-radius: 0;
+    width: 100%;
+  }
+}
+
 .mapSvg {
   width: 100%;
   height: 100%;
@@ -172,12 +201,17 @@
 /* Products Section */
 .productsSection {
   padding: 5rem 0;
-  /* background-color: var(--color-dark-gray); */
   background-color: #212419;
-  /* background: #9d8528;
-  background: linear-gradient(180deg, rgba(157, 133, 40, 1) 5%, rgba(157, 133, 35, 1) 15%, rgba(87, 73, 18, 1) 60%); */
-  /* height: 100vh; */
   border-bottom: #676127 solid 1rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .productsSection {
+    background-size: cover !important;
+  }
 }
 
 .productsContainer {
