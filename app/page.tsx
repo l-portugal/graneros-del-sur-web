@@ -313,7 +313,7 @@ export default function LandingPage() {
               <p className={contactStyles.contactTitle}>Contactanos</p>
 
               <div className={contactStyles.contactDetails}>
-                <div className={contactStyles.contactDetail}>+54 11 1234-5678</div>
+                <div className={contactStyles.contactDetail}>+54 11 71908080</div>
                 <div className={contactStyles.contactDetail}>info@granerosdelsur.com.ar</div>
               </div>
 
@@ -322,7 +322,7 @@ export default function LandingPage() {
                 {/* <a href="#" className={contactStyles.socialLink}>
                   <Facebook className={contactStyles.socialIcon} />
                 </a> */}
-                <a href="#" className={contactStyles.socialLink}>
+                <a href="https://instagram.com/granerosdelsur.ar" target="_blank" className={contactStyles.socialLink}>
                   <Instagram className={contactStyles.socialIcon} />
                 </a>
                 {/* <a href="#" className={contactStyles.socialLink}>
