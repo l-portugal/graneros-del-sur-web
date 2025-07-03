@@ -11,6 +11,8 @@ import footerStyles from "../styles/footer.module.css"
 
 import { Menu, X } from 'lucide-react';
 
+import ContactForm from "@/components/contactForm"
+
 export default function LandingPage() {
   const [scrollY, setScrollY] = useState(0)
   const [isOpen, setIsOpen] = useState(false);
@@ -331,18 +333,8 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className={contactStyles.contactForm}>
-              <div className={contactStyles.formRow}>
-                <input placeholder="Nombre" className={contactStyles.formInput} />
-                <input placeholder="Apellido" className={contactStyles.formInput} />
-              </div>
-              <input type="email" placeholder="Email" className={contactStyles.formInput} />
-              <input placeholder="Teléfono" className={contactStyles.formInput} />
-              <textarea placeholder="Mensaje" rows={6} className={contactStyles.formTextarea} />
-              <button type="submit" className={contactStyles.formButton}>
-                Enviar Mensaje
-              </button>
-            </div>
+            <ContactForm />
+
           </div>
         </div>
       </section>
