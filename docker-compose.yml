@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    container_name: graneros-del-sur-web
+    build: .
+    restart: always
+    ports:
+      - "${CONTAINER_PORT}:3000"
+    # environment:
+    #   - MAILGUN_API_KEY=${MAILGUN_API_KEY}
+    #   - MAIL_FROM=${MAIL_FROM}
+    #   - MAIL_TO1=${MAIL_TO1}
+    #   - MAIL_TO2=${MAIL_TO2}

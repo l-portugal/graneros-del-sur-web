@@ -1,0 +1,11 @@
+.next
+#.env
+.env.local
+node_modules
+.git
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose.yml
+.vscode
+.DS_Store
