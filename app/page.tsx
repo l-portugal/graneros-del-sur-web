@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Instagram, MessageCircle } from "lucide-react"
+import { Instagram } from "lucide-react"
 import navStyles from "../styles/navigation.module.css"
 import heroStyles from "../styles/hero.module.css"
 import productStyles from "../styles/products.module.css"
@@ -354,14 +354,14 @@ export default function LandingPage() {
       </footer>
 
       {/* WhatsApp Float Button */}
-      {/* <a
-        href="https://wa.me/1234567890"
+      <a
+        href="https://api.whatsapp.com/send?phone=541171908080&text=Hola%20*Graneros del Sur*%20"
         target="_blank"
         rel="noopener noreferrer"
         className={footerStyles.whatsappFloat}
       >
-        <MessageCircle className={footerStyles.whatsappFloatIcon} />
-      </a> */}
+        <img src="/whatsapp.png" alt="WhatsApp Icon" className={footerStyles.whatsappFloatIcon} />
+      </a>
     </div>
   )
 }
